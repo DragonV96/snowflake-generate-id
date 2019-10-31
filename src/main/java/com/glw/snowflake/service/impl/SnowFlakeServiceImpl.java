@@ -50,9 +50,9 @@ public class SnowFlakeServiceImpl implements SnowFlakeService {
         }
         lastStamp = currentStamp;
         return (currentStamp - START_STAMP) << LEFT_TIME_STAMP  // 时间戳左移到最高位
-                | dataCenterId << LEFT_DATA_CENTER              // 数据中心
-                | machineId << LEFT_MACHINE
-                | sequenceId;
+                | dataCenterId << LEFT_DATA_CENTER              // 数据中心左移
+                | machineId << LEFT_MACHINE                     // 机器标识左移
+                | sequenceId;                                   // 序列号
     }
 
     @Override
