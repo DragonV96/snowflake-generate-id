@@ -1,6 +1,7 @@
-package com.glw.snowflake.service.impl;
+package com.glw.snowflake.core.impl;
 
-import com.glw.snowflake.service.SnowFlakeService;
+import com.glw.snowflake.core.Constants;
+import com.glw.snowflake.core.SnowFlakeService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @Description : Twitter的分布式自增ID雪花算法实现类(java实现)
  */
 @Service
-public class SnowFlakeServiceImpl implements SnowFlakeService {
+public class SnowFlakeServiceImpl implements SnowFlakeService, Constants {
 
     private long dataCenterId;      // 数据中心部分的id段
     private long machineId;         // 机器标识部分的id段

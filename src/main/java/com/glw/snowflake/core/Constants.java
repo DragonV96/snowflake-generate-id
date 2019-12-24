@@ -1,12 +1,12 @@
-package com.glw.snowflake.service;
+package com.glw.snowflake.core;
 
 /**
  * @author : glw
- * @date : 2019/10/31
- * @time : 0:45
- * @Description : Twitter的分布式自增ID雪花算法接口(java实现)
+ * @date : 2019/12/24
+ * @time : 17:17
+ * @Description : 常量接口
  */
-public interface SnowFlakeService {
+public interface Constants {
     /**
      * 启用的当前时间戳
      */
@@ -33,26 +33,4 @@ public interface SnowFlakeService {
     long LEFT_MACHINE = SEQUENCE_BIT;                           // 机器标识需要左移到序列号左边（高位）
     long LEFT_DATA_CENTER = SEQUENCE_BIT + MACHINE_BIT;        // 数据中心需要左移到机器标识左边（高位）
     long LEFT_TIME_STAMP = LEFT_DATA_CENTER + DATA_CENTER_BIT;  // 时间戳需要左移到数据中心左边（高位）
-
-    /**
-     * 初始化数据中心与机器标识的序号
-     * @param dataCenterId
-     * @param machineId
-     */
-    void initDataCenterAndMachine(long dataCenterId, long machineId);
-
-    /**
-     * 生成下一个唯一id
-     */
-    long nextId();
-
-    /**
-     * 获取下一毫秒的时间戳
-     */
-    long getNextMill();
-
-    /**
-     * 获取下一时刻的系统时间戳
-     */
-    long getNextTimeStamp();
 }

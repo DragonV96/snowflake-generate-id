@@ -1,6 +1,6 @@
 package com.glw.snowflake;
 
-import com.glw.snowflake.service.SnowFlakeService;
+import com.glw.snowflake.core.SnowFlakeService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
